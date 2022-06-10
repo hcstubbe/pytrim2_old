@@ -1,3 +1,6 @@
+*.fastq
+*.fasta
+*.fast5
 .jekyll-cache/
 Gemfile.lock  
 *.bak
