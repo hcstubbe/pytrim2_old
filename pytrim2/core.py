@@ -32,7 +32,7 @@ def findAdapter(seq_record, barcode_primer, cutOff):
 
 # Cell
 
-def findAlingments(record_dict, barcode_primer):
+def findAlingments(record_dict, barcode_primer, inward_end):
 
     recordKeys = list(record_dict.keys())
 
@@ -42,18 +42,13 @@ def findAlingments(record_dict, barcode_primer):
     aligner.gap_score = -2
     aligner.mode = "local"
 
-    count = 0
-
+    al = "none"
     for i in record_keys:
-        seq = record_dict[i].seq
+        seq = record_dict[i].seq[0:inward_end]
         alignments = aligner.align(seq, barcode_primer)
         score = alignments.score
         if(len(alignments)) <= 3:
             al = alignments[0].aligned[0][0]
-        else:
-            al = ""
-        count += 1
 
-    print(count)
     return(al)
 
