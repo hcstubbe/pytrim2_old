@@ -2,7 +2,8 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"findAdapter": "00_core.ipynb"}
+index = {"findAdapter": "00_core.ipynb",
+         "findAlingments": "00_core.ipynb"}
 
 modules = ["core.py"]
 
