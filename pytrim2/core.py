@@ -34,7 +34,7 @@ def findAdapter(seq_record, barcode_primer, cutOff):
 
 def findAlingments(record_dict, barcode_primer, inward_end):
 
-    recordKeys = list(record_dict.keys())
+    record_keys = list(record_dict.keys())
 
     aligner = Align.PairwiseAligner()
     aligner.match_score = 1.0
@@ -43,12 +43,16 @@ def findAlingments(record_dict, barcode_primer, inward_end):
     aligner.mode = "local"
 
     al = "none"
-    for i in record_keys:
-        seq = record_dict[i].seq[0:inward_end]
+    for i in record_keys[0:100]:
+        al_array = np.zeros(10)
+        seq = record_dict[i].seq
         alignments = aligner.align(seq, barcode_primer)
-        score = alignments.score
-        if(len(alignments)) <= 3:
-            al = alignments[0].aligned[0][0]
+        len_alignments = len(alignments)
+        if(len_alignments <= 10):
+            score = alignments.score
+            al = [i.aligned for i in alignments]
+            for i in [1,2,3]:
+                al = [x for xs in al for x in xs]
 
     return(al)
 
