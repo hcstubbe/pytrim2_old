@@ -43,9 +43,9 @@ def findAlingments(record_dict, barcode_primer, inward_end):
     aligner.mode = "local"
 
     al = "none"
-    for i in record_keys[0:100]:
+    for i in record_keys:
         al_array = np.zeros(10)
-        seq = record_dict[i].seq
+        seq = record_dict[i].seq[0:200]
         alignments = aligner.align(seq, barcode_primer)
         len_alignments = len(alignments)
         if(len_alignments <= 10):
