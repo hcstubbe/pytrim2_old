@@ -48,11 +48,12 @@ def findAlingments(record_dict, barcode_primer):
         seq = record_dict[i].seq
         alignments = aligner.align(seq, barcode_primer)
         score = alignments.score
-        if(len(alignments)) == 1:
+        if(len(alignments)) <= 3:
             al = alignments[0].aligned[0][0]
         else:
             al = ""
         count += 1
 
     print(count)
+    return(al)
 
