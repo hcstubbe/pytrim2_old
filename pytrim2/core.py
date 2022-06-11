@@ -42,17 +42,27 @@ def findAlingments(record_dict, barcode_primer, inward_end):
     aligner.gap_score = -2
     aligner.mode = "local"
 
-    al = "none"
-    for i in record_keys:
-        al_array = np.zeros(10)
-        seq = record_dict[i].seq[0:200]
+
+    max_alignments = 10
+    n_sequences = len(record_keys[0:100])
+
+    array_cols = max_alignments + 2
+    al_array = np.zeros( (n_sequences, array_cols) )
+
+    for i in list(range(0, n_sequences, 1)):
+        al = []
+        seq = record_dict[record_keys[i]].seq[0:200]
         alignments = aligner.align(seq, barcode_primer)
         len_alignments = len(alignments)
-        if(len_alignments <= 10):
+        if(len_alignments <= max_alignments):
             score = alignments.score
-            al = [i.aligned for i in alignments]
-            for i in [1,2,3]:
-                al = [x for xs in al for x in xs]
+            al = [j.aligned for j in alignments]
+            len_al = len(al)
+            for k in range(0, len_al):
+                al[k] = (al[k][0][0][1])
+            al_array[i, 0:len(al)] = al
+            al_array[i, -1] = len_al
+            al_array[i, -2] = alignments.score
 
-    return(al)
+    return(al_array)
 
