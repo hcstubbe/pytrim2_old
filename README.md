@@ -1,8 +1,6 @@
-# Project name here
-> Summary description here.
+# pytrim2
+> pytrim2 searches adapter sequences in nanopore reads, trims the adapter sequences and demultiplexes reads. The program is memory friendly and able to process very large files with economic ram usage.
 
-
-This file will become your README and also the index of your documentation.
 
 ## Install
 
@@ -10,15 +8,4 @@ This file will become your README and also the index of your documentation.
 
 ## How to use
 
-Fill me in please! Don't forget code examples:
-
-```
-1+1
-```
-
-
-
-
-    2
-
-
+`pytrim2.demultiplex(in, out, ...)`
