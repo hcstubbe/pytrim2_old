@@ -2,3 +2,4 @@
 *.fasta
 *.fast5
 *.csv
+!test.fasta
