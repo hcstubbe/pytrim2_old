@@ -3,3 +3,4 @@
 *.fast5
 *.csv
 !test.fasta
+!test_primer.fasta

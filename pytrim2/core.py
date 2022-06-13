@@ -6,7 +6,7 @@ __all__ = ['findAlingments']
 # Import dependencies
 from Bio import SeqIO
 from Bio import Align
-from Bio import Seq
+from Bio.Seq import Seq
 import numpy as np
 
 # Cell
@@ -28,7 +28,7 @@ def findAlingments(record_dict, barcode_primer, inward_end, max_alignments):
 
     for i in list(range(0, n_sequences, 1)):
         al = []
-        seq = record_dict[record_keys[i]].seq[0:200]
+        seq = record_dict[record_keys[i]].seq[0:inward_end]
         alignments = aligner.align(seq, barcode_primer)
         len_alignments = len(alignments)
         if(len_alignments <= max_alignments):
