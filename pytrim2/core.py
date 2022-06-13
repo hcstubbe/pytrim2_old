@@ -3,6 +3,7 @@
 __all__ = ['findAlingments']
 
 # Cell
+
 # Import dependencies
 from Bio import SeqIO
 from Bio import Align
