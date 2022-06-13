@@ -6,6 +6,7 @@ __all__ = ['findAlingments']
 # Import dependencies
 from Bio import SeqIO
 from Bio import Align
+from Bio import Seq
 import numpy as np
 
 # Cell
@@ -36,9 +37,9 @@ def findAlingments(record_dict, barcode_primer, inward_end, max_alignments):
             len_al = len(al)
             for k in range(0, len_al):
                 al[k] = (al[k][0][0][1])
-            al_array[i, 0:len(al)] = al
-            al_array[i, -1] = len_al
-            al_array[i, -2] = alignments.score/len(barcode_primer)
+            al_array[i, 0:len(al)] = al # ends of each alignment
+            al_array[i, -2] = len_alignments # number of alingments
+            al_array[i, -1] = np.around(alignments.score/len(barcode_primer)*100) # normalized local alingnment score
 
     return(al_array)
 
