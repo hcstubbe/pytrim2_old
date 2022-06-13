@@ -2,7 +2,8 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"findAlingments": "00_core.ipynb"}
+index = {"findAlingments": "00_core.ipynb",
+         "align_barcodes": "00_core.ipynb"}
 
 modules = ["core.py"]
 

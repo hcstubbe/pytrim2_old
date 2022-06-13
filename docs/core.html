@@ -70,24 +70,30 @@ nb_path: "00_core.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">align_barcodes</span><span class="p">(</span><span class="n">primer_dict</span><span class="p">,</span> <span class="n">record_dict</span><span class="p">,</span> <span class="n">inward_end</span><span class="p">,</span> <span class="n">max_alignments</span><span class="p">):</span>
-    <span class="n">primer_keys</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">primer_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-    <span class="n">n_primers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">primer_keys</span><span class="p">)</span>
-    <span class="c1"># alingments_array = np.zeros( (n_primers, max_alignments + 2) )</span>
-    <span class="n">alingments</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_primers</span><span class="p">)</span> <span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_primers</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span>
-        <span class="n">primer_seq_i</span> <span class="o">=</span> <span class="n">primer_dict</span><span class="p">[</span><span class="n">primer_keys</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">seq</span>
-        <span class="n">alingments</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">findAlingments</span><span class="p">(</span><span class="n">record_dict</span><span class="p">,</span> <span class="n">primer_seq_i</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="n">max_alignments</span><span class="p">)</span>
-    <span class="k">return</span><span class="p">(</span><span class="n">alingments</span><span class="p">)</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="align_barcodes" class="doc_header"><code>align_barcodes</code><a href="https://github.com/hcstubbe/pytrim2/tree/master/pytrim2/core.py#L51" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>align_barcodes</code>(<strong><code>primer_dict</code></strong>, <strong><code>record_dict</code></strong>, <strong><code>inward_end</code></strong>, <strong><code>max_alignments</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
