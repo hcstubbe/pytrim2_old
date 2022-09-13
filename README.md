@@ -8,4 +8,8 @@
 
 ## How to use
 
-`pytrim2.demultiplex(in, out, ...)`
+`pytrim2.demultiplex(input_file, input_file_type, primer_file, primer_file_type, output_folder, max_distance, max_alignments)`
+
+## Example
+
+`demultiplex("test_data/test.fasta", "fasta", "test_data/test_primer.fasta", "fasta", "test_out", 200, 5)`

@@ -7,7 +7,7 @@ index = {"findAlingments": "00_core.ipynb",
          "decide_barcode_id": "00_core.ipynb",
          "trim_record": "00_core.ipynb",
          "sort_records_to_file": "00_core.ipynb",
-         "pytrim2": "00_core.ipynb"}
+         "demultiplex": "00_core.ipynb"}
 
 modules = ["core.py"]
 
