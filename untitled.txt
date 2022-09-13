@@ -1,0 +1,6 @@
+#!/bin/bash
+
+FILES="/mnt/0/*.fastq"
+for f in *.fastq.gz
+do
+  cat "$f" > out/all.fastq.gz
