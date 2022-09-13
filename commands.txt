@@ -1,6 +1,7 @@
-# intall requirements
+# install requirements
 
-
+# git
+git config --global credential.helper store
 
 # nbdev commands
 nbdev_build_lib && nbdev_clean_nbs && nbdev_build_docs
