@@ -12,4 +12,4 @@
 
 ## Example
 
-`demultiplex("test_data/test.fasta", "fasta", "test_data/test_primer.fasta", "fasta", "test_out", 200, 5)`
+`pytrim2.demultiplex("test_data/test.fasta", "fasta", "test_data/test_primer.fasta", "fasta", "test_out", 200, 5)`
