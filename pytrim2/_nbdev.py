@@ -3,7 +3,11 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"findAlingments": "00_core.ipynb",
-         "align_barcodes": "00_core.ipynb"}
+         "align_barcodes": "00_core.ipynb",
+         "decide_barcode_id": "00_core.ipynb",
+         "trim_record": "00_core.ipynb",
+         "sort_records_to_file": "00_core.ipynb",
+         "pytrim2": "00_core.ipynb"}
 
 modules = ["core.py"]
 
