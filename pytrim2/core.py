@@ -13,9 +13,8 @@ import numpy as np
 
 # Cell
 
-# Find alignments for each primer in a sequence record
 def findAlingments(seq_record, primer_dict, inward_end, max_alignments):
-
+    "Find alignments for each primer in a sequence record"
     primer_keys = list(primer_dict.keys())
 
     aligner = Align.PairwiseAligner()
@@ -51,8 +50,8 @@ def findAlingments(seq_record, primer_dict, inward_end, max_alignments):
 
 # Cell
 
-# Aligne all barcodes in a list of seq records
 def align_barcodes(primer_dict, record_dict, inward_end, max_alignments):
+    "Aligne all barcodes in a list of seq records"
 
     record_keys = list(record_dict.keys())
     n_sequences = len(record_keys)
@@ -66,8 +65,9 @@ def align_barcodes(primer_dict, record_dict, inward_end, max_alignments):
 
 # Cell
 
-# Decide which barcode is best hit; remove if tie
 def decide_barcode_id(alginment_arrays):
+    "Decide which barcode is best hit; remove if tie"
+
     id_array = np.zeros((np.shape(alginment_arrays)[0],2), dtype=np.int64)
     for i in range(0, np.shape(alginment_arrays)[0]):
         array_i = alginment_arrays[i]
@@ -91,8 +91,8 @@ def trim_record(seq_record, primer_end_position):
 
 # Cell
 
-# Sort records into new files based on barcodes and name files after barcodes
 def sort_records_to_file(record_dict, primer_dict, output_folder, alginment_arrays):
+    "Sort records into new files based on barcodes and name files after barcodes"
 
     seq_barcode_res = decide_barcode_id(alginment_arrays)
     seq_barcode_ids = seq_barcode_res[:,0]
@@ -109,8 +109,9 @@ def sort_records_to_file(record_dict, primer_dict, output_folder, alginment_arra
 
 # Cell
 
-# Run the program
 def demultiplex(input_file, input_file_type, primer_file, primer_file_type, output_folder, max_distance, max_alignments):
+    "Run the program"
+
     primer_dict = SeqIO.index(primer_file, primer_file_type)
     record_dict = SeqIO.index(input_file, input_file_type)
     alginment_arrays = align_barcodes(primer_dict, record_dict, max_distance, max_alignments)
